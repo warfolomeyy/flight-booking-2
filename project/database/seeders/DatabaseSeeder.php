@@ -3,23 +3,54 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Product;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
 
 class DatabaseSeeder extends Seeder
 {
-    use WithoutModelEvents;
-
-    /**
-     * Seed the application's database.
-     */
     public function run(): void
     {
-        // User::factory(10)->create();
+        User::updateOrCreate(
+            ['email' => 'admin@flight.ru'],
+            [
+                'fio' => 'Администратор Администратор Администраторович',
+                'password' => Hash::make('QWEasd123'),
+                'role' => 'admin',
+            ]
+        );
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
-        ]);
+        User::updateOrCreate(
+            ['email' => 'user@flight.ru'],
+            [
+                'fio' => 'Иванов Иван Иванович',
+                'password' => Hash::make('password'),
+                'role' => 'client',
+            ]
+        );
+
+        Product::updateOrCreate(
+            ['name' => 'SU-100 Москва Сочи'],
+            [
+                'description' => 'Рейс SU-100, Вылет 12:00, Эконом класс',
+                'price' => 8500,
+            ]
+        );
+
+        Product::updateOrCreate(
+            ['name' => 'SU-202 Москва Санкт-Петербург'],
+            [
+                'description' => 'Рейс SU-202, Вылет 15:30, Эконом класс',
+                'price' => 4200,
+            ]
+        );
+
+        Product::updateOrCreate(
+            ['name' => 'SU-303 Москва Казань'],
+            [
+                'description' => 'Рейс SU-303, Вылет 18:00, Эконом класс',
+                'price' => 3500,
+            ]
+        );
     }
 }
