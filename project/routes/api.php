@@ -6,6 +6,7 @@ use App\Http\Controllers\Api\CartController;
 use App\Http\Controllers\Api\OrderController;
 use App\Http\Controllers\Api\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Api\Admin\ProductController as AdminProductController;
 
 
 Route::post('/signup', [AuthController::class, 'signup']);
@@ -22,4 +23,11 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::get('/order', [OrderController::class, 'index']);
     Route::post('/order', [OrderController::class, 'store']);
     Route::patch('/profile', [ProfileController::class, 'update']);
+});
+
+
+Route::middleware(['auth:sanctum', 'admin'])->group(function () {
+    Route::post('/product', [AdminProductController::class, 'store']);
+    Route::patch('/product/{id}', [AdminProductController::class, 'update']);
+    Route::delete('/product/{id}', [AdminProductController::class, 'destroy']);
 });
