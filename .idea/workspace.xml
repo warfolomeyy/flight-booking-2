@@ -1,16 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="5ce89b79-eb05-4df5-b46a-57e0322986a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project/app/Actions/Product/ManageProductAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/app/Services/ProductService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Models/Flight.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Models/Product.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Models/Product.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/bootstrap/app.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/migrations/2026_10_03_121657_create_flights_table.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/api.php" afterDir="false" />
-    </list>
+    <list default="true" id="5ce89b79-eb05-4df5-b46a-57e0322986a5" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -67,7 +58,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1791023925859</updated>
-      <workItem from="1791023926894" duration="29519000" />
+      <workItem from="1791023926894" duration="30055000" />
     </task>
     <servers />
   </component>

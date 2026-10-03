@@ -29,7 +29,6 @@ class CartService
             ], 404);
         }
 
-        // Проверка: товар должен принадлежать именно этому пользователю (иначе 403)
         if ($cartItem->user_id !== $userId) {
             return response()->json([
                 'message' => 'Forbidden for you'
