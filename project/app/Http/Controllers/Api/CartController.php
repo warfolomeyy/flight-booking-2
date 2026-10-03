@@ -18,7 +18,6 @@ class CartController extends Controller
         $this->cartService = $cartService;
     }
 
-    use App\Http\Resources\CartResource;
 
     public function index(Request $request): JsonResponse
     {
