@@ -2,12 +2,13 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Http\Resources\UserResource;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\Auth\LoginRequest;
-use App\Http\Requests\Auth\SignupRequest;
-use App\Http\Services\AuthService;
-use Illuminate\Http\JsonResponse;
+use App\Services\AuthService;
+use App\Actions\Auth\RegisterUserAction;
+use App\Actions\Auth\LoginUserAction;
 use Illuminate\Http\Request;
+use Illuminate\Http\JsonResponse;
 
 class AuthController extends Controller
 {
@@ -18,28 +19,40 @@ class AuthController extends Controller
         $this->authService = $authService;
     }
 
-    public function signup(SignupRequest $request): JsonResponse
+    public function signup(Request $request, RegisterUserAction $action): JsonResponse
     {
-        $token = $this->authService->register($request->validated());
+        $data = $request->validate([
+            'fio' => 'required|string',
+            'email' => 'required|email|unique:users',
+            'password' => 'required|min:6',
+            'avatar' => 'nullable|string',
+        ]);
+
+        $result = $this->authService->register($data, $action);
 
         return response()->json([
-            'user_token' => $token
+            'user_token' => $result['token']
         ], 201);
     }
 
-    public function login(LoginRequest $request): JsonResponse
+    public function login(Request $request, LoginUserAction $action): JsonResponse
     {
-        $token = $this->authService->login($request->validated());
+        $data = $request->validate([
+            'email' => 'required|email',
+            'password' => 'required',
+        ]);
+
+        $result = $this->authService->login($data, $action);
 
         return response()->json([
-            'user_token' => $token
+            'user_token' => $result['token']
         ], 200);
     }
 
     public function profile(Request $request): JsonResponse
     {
         return response()->json([
-            'user' => $request->user()
+            'user' => new UserResource($request->user())
         ], 200);
     }
 
@@ -51,4 +64,5 @@ class AuthController extends Controller
             'message' => 'logout'
         ], 200);
     }
+
 }

@@ -1,39 +1,18 @@
 <?php
-namespace App\Http\Services;
+namespace App\Services;
 
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\ValidationException;
+use App\Actions\Auth\RegisterUserAction;
+use App\Actions\Auth\LoginUserAction;
 
 class AuthService
 {
-
-    public function register(array $data): string
+    public function register(array $data, RegisterUserAction $action): array
     {
-        $user = User::create([
-            'fio' => $data['fio'],
-            'email' => $data['email'],
-            'password' => Hash::make($data['password']),
-            'avatar' => $data['avatar'] ?? '/avatars/default.jpg',
-            'role' => 'client',
-        ]);
-
-        return $user->createToken('api_token')->plainTextToken;
+        return $action->execute($data);
     }
 
-
-    public function login(array $data): string
+    public function login(array $data, LoginUserAction $action): array
     {
-        $user = User::where('email', $data['email'])->first();
-
-        if (!$user || !Hash::check($data['password'], $user->password)) {
-            throw ValidationException::withMessages([
-                'password' => ['Login failed'],
-            ]);
-        }
-
-        $user->tokens()->delete();
-
-        return $user->createToken('api_token')->plainTextToken;
+        return $action->execute($data);
     }
 }
