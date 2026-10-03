@@ -2,9 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ce89b79-eb05-4df5-b46a-57e0322986a5" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/project/app/Services/AuthService.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/routes/api.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/migrations/0001_01_01_000000_create_users_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/database/migrations/0001_01_01_000000_create_users_table.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/database/seeders/DatabaseSeeder.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/database/seeders/DatabaseSeeder.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/bootstrap/app.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/bootstrap/app.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1791023925859</updated>
-      <workItem from="1791023926894" duration="8856000" />
+      <workItem from="1791023926894" duration="11115000" />
     </task>
     <servers />
   </component>
