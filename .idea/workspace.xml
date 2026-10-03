@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="5ce89b79-eb05-4df5-b46a-57e0322986a5" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/project/app/Actions/Auth/LoginUserAction.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/project/app/Actions/Auth/RegisterUserAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Actions/Cart/AddToCartAction.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Http/Resources/CartResource.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/project/app/Services/CartService.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/deploy/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/deploy/docker-compose.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Http/Controllers/Api/AuthController.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Http/Controllers/Api/AuthController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/app/Models/Cart.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Models/Cart.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/project/app/Models/User.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Models/User.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/app/Services/AuthService.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/app/Services/AuthService.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.json" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/project/composer.lock" beforeDir="false" afterPath="$PROJECT_DIR$/project/composer.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/database/migrations/2026_10_03_181316_create_carts_table.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/database/migrations/2026_10_03_181316_create_carts_table.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/project/routes/api.php" beforeDir="false" afterPath="$PROJECT_DIR$/project/routes/api.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,7 +65,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1791023925859</updated>
-      <workItem from="1791023926894" duration="19532000" />
+      <workItem from="1791023926894" duration="22400000" />
     </task>
     <servers />
   </component>
