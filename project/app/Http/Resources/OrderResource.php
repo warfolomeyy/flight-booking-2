@@ -11,8 +11,8 @@ class OrderResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'products' => $this->products,
-            'order_price' => (float)$this->order_price,
+            'products' => $this->products->pluck('id'),
+            'order_price' => (float) $this->order_price,
         ];
     }
 }
