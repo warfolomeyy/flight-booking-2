@@ -1,0 +1,23 @@
+git add .gitignore
+/project/vendor/
+composer.phar
+
+
+/project/.env
+/project/.env.bak
+
+
+.idea/
+.vscode/
+
+
+.DS_Store
+Thumbs.db
+
+
+/project/storage/*.key
+/project/storage/framework/sessions/*
+/project/storage/framework/views/*
+/project/storage/framework/cache/*
+/project/storage/logs/*
+/project/bootstrap/cache/*
