@@ -7,7 +7,6 @@
 - PostgreSQL (реляционная база данных)
 - pgAdmin (веб-интерфейс для управления базой данных)
 - Docker & Docker Compose (контейнеризация среды)
-- Laravel Sanctum (токеновая авторизация)
 
 ## Структура проекта
 - `deploy/` - файлы конфигурации Docker и docker-compose.
@@ -37,7 +36,7 @@ docker-compose up -d
 ```
 
 ### 3. Настройка окружения и зависимостей
-Перейдите в папку с проектом (project), войдите в контейнер приложения, установите зависимости и настройте конфигурацию:
+Перейдите в папку с проектом (`project`), войдите в контейнер приложения, установите зависимости и настройте конфигурацию:
 
 ```bash
 
@@ -46,6 +45,15 @@ docker-compose -f ../deploy/docker-compose.yml exec app bash
 composer install
 cp .env.example .env
 php artisan key:generate
+```
+Откройте файл .env и убедитесь, что параметры подключения к базе данных настроены следующим образом (для корректной работы с Docker Compose):
+```env
+DB_CONNECTION=pgsql
+DB_HOST=db
+DB_PORT=5432
+DB_DATABASE=flight_booking
+DB_USERNAME=postgres
+DB_PASSWORD=pass
 
 ```
 
